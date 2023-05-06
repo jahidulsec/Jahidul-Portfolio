@@ -1,0 +1,46 @@
+.skillCard {
+    margin: 0 1rem;
+}
+
+.skillCard .container {
+    width: 26rem;
+    /* padding: 1rem; */
+    /* background-color: red; */
+}
+
+.skillCard .container .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 1rem 0;
+}
+
+.skillCard .container .skills .skill{
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+    justify-content: space-between;
+}
+
+.skills .skill-bar{
+    display: flex;
+    margin-left: 2rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.skills .skill-bar .pos {
+    content: "";
+    /* width: 20rem; */
+    border: 2px solid black;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.skills .skill-bar .neg {
+    content: "";
+    /* width: 4rem; */
+    border: 2px solid white;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
