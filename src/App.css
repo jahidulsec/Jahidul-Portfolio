@@ -326,9 +326,9 @@ p{
 
 /* app section */
 body{
-  background-image: url('Images/background.svg');
-  object-fit: cover;
   background-color: var(--clr-primary-400);
+  background-image: url('https://res.cloudinary.com/dhmh6d8si/image/upload/v1683441930/background_lpah3u.svg');
+  object-fit: cover;
 }
 
 
