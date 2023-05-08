@@ -1,5 +1,6 @@
 import React from 'react'
 import ReviewCard from '../ReviewCard'
+import Slider from 'infinite-react-carousel'
 
 
 const Testimonial = () => {
@@ -15,23 +16,63 @@ const Testimonial = () => {
         </div>
   
         <div className="testimonial-list">
-          <ReviewCard 
-            reviewerName={`Reviwer's name`}
-            reviewerCompany={`Company name`}
-            desc={`
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna 
-              aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-              ullamco laboris nisi.
-            `}  
-          />
+          <Slider 
+            dots 
+            arrows={false}
+            className='slide-size'
+          >
+            <div>
+              <ReviewCard 
+              reviewerName={`Reviwer's name`}
+              reviewerCompany={`Company name`}
+              desc={`
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna 
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                ullamco laboris nisi.
+              `}  
+              />
+            </div>
+            <div>
+              <ReviewCard 
+              reviewerName={`Reviwer's name`}
+              reviewerCompany={`Company name`}
+              desc={`
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna 
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                ullamco laboris nisi.
+              `}  
+              />
+            </div>
+            <div>
+              <ReviewCard 
+              reviewerName={`Reviwer's name`}
+              reviewerCompany={`Company name`}
+              desc={`
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna 
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                ullamco laboris nisi.
+              `}  
+              />
+            </div>
+            <div>
+              <ReviewCard 
+              reviewerName={`Reviwer's name`}
+              reviewerCompany={`Company name`}
+              desc={`
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna 
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                ullamco laboris nisi.
+              `}  
+              />
+            </div>
+          </Slider>
           
+        </div>
 
-        </div>
-        <div className="circles next-review">
-            <span className="circle-light"></span>
-            <span className="circle-light"></span>
-        </div>
       </div>
     </section>
   )

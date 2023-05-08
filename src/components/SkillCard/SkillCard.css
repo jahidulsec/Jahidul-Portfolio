@@ -1,11 +1,9 @@
 .skillCard {
-    margin: 0 1rem;
+    margin: 0 0rem;
 }
 
 .skillCard .container {
-    width: 26rem;
-    /* padding: 1rem; */
-    /* background-color: red; */
+    width: 24rem;
 }
 
 .skillCard .container .title{
@@ -13,6 +11,29 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 0 1rem 0;
+    padding: 1rem 0.5rem;
+
+}
+
+.skillCard .container .title:hover{
+    cursor: pointer;
+}
+
+.skillCard .container .down-icon {
+    transition: all 300ms ease-out;
+}
+
+.visible{
+    transform: rotate(-180deg);
+}
+
+.skillCard .container .skills{
+    transition: all 200ms ease-out;
+}
+
+.down-menu{
+    transform: translateY(-2rem);
+    opacity: 0;
 }
 
 .skillCard .container .skills .skill{
@@ -32,7 +53,7 @@
 .skills .skill-bar .pos {
     content: "";
     /* width: 20rem; */
-    border: 2px solid black;
+    border: 2px solid rgb(0, 0, 0);
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
 }
@@ -40,7 +61,16 @@
 .skills .skill-bar .neg {
     content: "";
     /* width: 4rem; */
-    border: 2px solid white;
+    border: 2px solid rgb(207, 207, 207);
     border-top-right-radius: 2rem;
     border-bottom-right-radius: 2rem;
+}
+
+
+/* tab view */
+
+@media (max-width: 52rem) {
+    .skillCard .container {
+        width: 20rem;
+    }
 }

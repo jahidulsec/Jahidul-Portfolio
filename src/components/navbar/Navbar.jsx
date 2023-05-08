@@ -1,34 +1,39 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 const Navbar = () => {
 
   const headerRef = useRef(undefined)
+  const toggleRef = useRef(undefined)
+  const logoRef = useRef(undefined)
 
-  useEffect(()=> {
+  const [visibility,setVisibility] = useState(false)
+
+  useEffect(() => {
+    
     let prevScroll = window.scrollY
 
     const handleScroll = () => {
       const currentScroll = window.scrollY
-      const headerElement = headerRef.current
+      const headerNav = headerRef.current
+      const toggleBtn = toggleRef.current
+      const logo = logoRef.current
 
-      if (!headerElement) {
-        return;
+
+      console.log(headerNav)
+      if (!headerNav){
+        return
       }
-      console.log(currentScroll)
       if(prevScroll > 16) {
-        headerElement.style.transform = "translateY(-2rem)"
-        headerElement.style.padding = "1.625rem 1.875rem .625rem"
-        headerElement.style.position = "fixed"
-        headerElement.style.left = "0"
-
-      } else {
-        headerElement.style.transform = "translateY(0rem)"
-        headerElement.style.padding = ".625rem 1.875rem"
-        headerElement.style.position = "absolute"
-
-
+        headerNav.style.margin = '-2rem 0 0 0'
+        toggleBtn.style.top = `1rem`
+        logo.style.margin = `-3rem 0 0 0`
       }
-      prevScroll = currentScroll;
+      else {
+        headerNav.style.margin = '0rem 0 0 0'
+        toggleBtn.style.top = `4rem`
+        logo.style.margin = `0`
+      }
+      prevScroll = currentScroll
     }
 
     window.addEventListener("scroll", handleScroll)
@@ -36,7 +41,9 @@ const Navbar = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
-  },[]);
+    
+
+  },[])
 
   const handleClick = (anchor) => () => { 
     const id = `${anchor}-section`; 
@@ -50,11 +57,19 @@ const Navbar = () => {
     } 
   }; 
 
+
   return (
     <header className='primary-header'>
-      <div className="container grid">
-        <div className="nav-bg bg-dark" ref={headerRef}>
-          <nav className='primary-nav' >
+      <div className="container">
+        <div 
+          id="nav-bg" 
+        >
+          
+          <nav
+            className='primary-nav text-neutral-300 ff-primary fs-nav fw-bold' 
+            data-visible={visibility}
+            ref={headerRef}
+          >
             <ul role='list'>
               <li><a href="#" onClick={handleClick(`hero`)}>HOME</a></li>
               <li><a href="#about" onClick={handleClick(`about`)}>ABOUT</a></li>
@@ -65,10 +80,26 @@ const Navbar = () => {
             </ul>
           </nav>
         </div>
+        <div className="mbl-nav">
+          
+        </div>
+        <button 
+            className='mobile-nav-toggle'
+            onClick={()=> (setVisibility(!visibility))}
+            ref={toggleRef}
+          >
+          <span 
+            className="material-symbols-outlined"
+          >
+            {!visibility ? `menu` : `close`}
+          </span>
+        </button>
         <div 
-          className="logo ff-secondary text-primary fs-section-subtitle"
+          className="logo ff-secondary text-neutral-200 fs-card-title"
+          ref={logoRef}
+          onClick={handleClick(`hero`)}
         >
-          jahidul islam
+          Jahidul
         </div>
       </div>
     </header>

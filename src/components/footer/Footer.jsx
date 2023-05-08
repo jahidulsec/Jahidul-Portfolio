@@ -22,7 +22,7 @@ const Footer = () => {
           <h2 className='ff-primary text-primary fs-card-title fw-bold'>Jahidul Islam</h2>
           <h2 className='ff-secondary text-secondary fs-para'>Front-end Developer</h2>
         </div>
-        <nav className="footer-nav">
+        <nav className="footer-nav text-primary ff-primary fs-nav fw-bold">
           <ul role='list'>
               <li><a href="#" onClick={handleClick(`hero`)}>HOME</a></li>
               <li><a href="#about" onClick={handleClick(`about`)}>ABOUT</a></li>

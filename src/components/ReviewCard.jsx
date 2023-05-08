@@ -10,7 +10,7 @@ const ReviewCard = ({reviewerName, reviewerCompany, desc}) => {
         <p className='text-primary ff-primary fw-regular fs-para'>
             {desc}
         </p>
-        <div className="footer">
+        <div className="testimonial-footer">
             <div className="circles">
                 <span className="circle-dark"></span>
                 <span className="circle-dark"></span>
