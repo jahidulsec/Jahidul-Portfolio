@@ -1,19 +1,7 @@
 import React from 'react'
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
 
-const Footer = () => {
-
-  const handleClick = (anchor) => () => { 
-    const id = `${anchor}-section`; 
-    const element = document.getElementById(id);
-    console.log(element) 
-    if (element) { 
-      element.scrollIntoView({ 
-        behavior: "smooth", 
-        block: "start", 
-      }); 
-    } 
-  }; 
+const Footer = ({handleClick}) => {
 
   return (
     <footer className='footer-section bg-light-300'>

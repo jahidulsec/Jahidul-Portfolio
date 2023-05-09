@@ -4,7 +4,7 @@ import { BsArrowDown } from 'react-icons/bs'
 
 const Portfolio = () => {
   return (
-    <section className='project-section' id='project-section'>
+    <section className='project-section' id='project'>
       <div className="container grid">
         <div className="title">
           <h1 className='text-neutral-300 fw-extra-bold fs-section-title ff-primary'>PORTFOLIO</h1>

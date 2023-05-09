@@ -11,18 +11,32 @@ import Skill from './components/skills/Skill'
 
 
 const App = () => {
+
+  const handleClick = (anchor) => () => { 
+    const id = `${anchor}`; 
+    const element = document.getElementById(id);
+    if (element) { 
+      element.scrollIntoView({ 
+        behavior: "smooth", 
+        block: "start", 
+      }); 
+    } 
+  }; 
+
+
+
   return (
     <div>
-      <Navbar />
+      <Navbar handleClick={handleClick} />
       <main>
-        <Hero />
+        <Hero handleClick={handleClick} />
         <About />
         <Skill />
         <Portfolio />
         <Testimonial />
         <Contact />
       </main>
-      <Footer />
+      <Footer handleClick={handleClick} />
     </div>
   )
 }

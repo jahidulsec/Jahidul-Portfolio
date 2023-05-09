@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-const Navbar = () => {
+const Navbar = ({ handleClick }) => {
 
   const headerRef = useRef(undefined)
   const toggleRef = useRef(undefined)
@@ -11,15 +11,13 @@ const Navbar = () => {
   useEffect(() => {
     
     let prevScroll = window.scrollY
-
+      
     const handleScroll = () => {
       const currentScroll = window.scrollY
       const headerNav = headerRef.current
       const toggleBtn = toggleRef.current
       const logo = logoRef.current
 
-
-      console.log(headerNav)
       if (!headerNav){
         return
       }
@@ -41,21 +39,38 @@ const Navbar = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
-    
-
   },[])
 
-  const handleClick = (anchor) => () => { 
-    const id = `${anchor}-section`; 
-    const element = document.getElementById(id);
-    console.log(element) 
-    if (element) { 
-      element.scrollIntoView({ 
-        behavior: "smooth", 
-        block: "start", 
-      }); 
-    } 
-  }; 
+  useEffect(()=> {
+
+    const sections  = document.querySelectorAll(`section[id]`)
+
+    const scrollActive = () => {
+      const scrollY = window.pageYOffset
+
+      sections.forEach(current => {
+        const sectionHeight =  current.offsetHeight
+        const sectionTop = current.offsetTop - 50
+        const sectionId = current.getAttribute('id')
+
+        if ((scrollY > sectionTop) && (scrollY <= sectionTop + sectionHeight)) {
+          document.querySelector('.primary-nav li .nav-'+sectionId).classList.add('active-link')
+        }else{
+          document.querySelector('.primary-nav li .nav-'+sectionId).classList.remove('active-link')
+        }
+      });
+    }
+
+    window.addEventListener("scroll", scrollActive)
+
+      return () => {
+        window.removeEventListener("scroll", scrollActive)
+      }
+  },[])
+
+  const handleVisibilityNav = () => {
+    setVisibility(!visibility)
+  }
 
 
   return (
@@ -66,17 +81,17 @@ const Navbar = () => {
         >
           
           <nav
-            className='primary-nav text-neutral-300 ff-primary fs-nav fw-bold' 
+            className='primary-nav text-neutral-200 ff-primary fs-nav fw-bold' 
             data-visible={visibility}
             ref={headerRef}
           >
             <ul role='list'>
-              <li><a href="#" onClick={handleClick(`hero`)}>HOME</a></li>
-              <li><a href="#about" onClick={handleClick(`about`)}>ABOUT</a></li>
-              <li><a href="#skills" onClick={handleClick(`skill`)}>SKILLS</a></li>
-              <li><a href="#portfolio" onClick={handleClick(`project`)}>PORTFOLIOS</a></li>
-              <li><a href="#testimonials" onClick={handleClick(`testimonial`)}>TESTIMONIALS</a></li>
-              <li><a href="#contact" onClick={handleClick(`contact`)}>CONTACT</a></li>
+              <li><a href="#" className='nav-hero' onClick={handleClick(`hero`)}>HOME</a></li>
+              <li><a href="#about" className='nav-about' onClick={handleClick(`about`)}>ABOUT</a></li>
+              <li><a href="#skills" className='nav-skill' onClick={handleClick(`skill`)}>SKILLS</a></li>
+              <li><a href="#project" className='nav-project' onClick={handleClick(`project`)}>PORTFOLIOS</a></li>
+              <li><a href="#testimonials" className='nav-testimonial' onClick={handleClick(`testimonial`)}>TESTIMONIALS</a></li>
+              <li><a href="#contact" className='nav-contact' onClick={handleClick(`contact`)}>CONTACT</a></li>
             </ul>
           </nav>
         </div>
@@ -85,11 +100,12 @@ const Navbar = () => {
         </div>
         <button 
             className='mobile-nav-toggle'
-            onClick={()=> (setVisibility(!visibility))}
+            onClick={handleVisibilityNav}
             ref={toggleRef}
           >
           <span 
             className="material-symbols-outlined"
+            style={visibility ? {position: `fixed`} : {position:`absolute`}}
           >
             {!visibility ? `menu` : `close`}
           </span>

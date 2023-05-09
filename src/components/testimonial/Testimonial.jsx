@@ -7,7 +7,7 @@ const Testimonial = () => {
 
 
   return (
-    <section className='testimonial-section' id='testimonial-section'>
+    <section className='testimonial-section' id='testimonial'>
       <div className="container grid">
         <div className="title">
           <h1 className='text-neutral-300 fw-extra-bold fs-section-title ff-primary'>

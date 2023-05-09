@@ -1,9 +1,9 @@
 import React from 'react'
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
 
-const Hero = () => {
+const Hero = ({handleClick}) => {
   return (
-    <section className='hero-section' id='hero-section'>
+    <section className='hero-section' id='hero'>
       <div className="container grid">
         <div className="left">
           <h1 className='fs-hero-title ff-primary fw-extra-bold'>Hi! I'm Jahidul Islam</h1>
@@ -16,14 +16,18 @@ const Hero = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
           </p>
-          <button className='btn-dark '>Let's Talk</button>
+          <button className='btn-dark '>
+            <a href='#contact' onClick={handleClick(`contact`)} >
+              Let's Talk
+            </a>
+          </button>
         </div>
         <div className="right">
           <img className='pp' src="/Images/frame.png" alt="" />
         </div>
         <div className="icons">
-          <AiFillGithub size={40} className='github' />
-          <AiFillLinkedin size={40} className='linkedin' />
+          <AiFillGithub size={30} className='github' />
+          <AiFillLinkedin size={30} className='linkedin' />
         </div>
       </div>
     </section>

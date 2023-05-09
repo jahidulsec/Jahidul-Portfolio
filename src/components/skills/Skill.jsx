@@ -4,7 +4,7 @@ import { area } from '../../data'
 
 const Skill = () => {
   return (
-    <section className='skill-section bg-light-500' id='skill-section'>
+    <section className='skill-section bg-light-500' id='skill'>
       <div className="container grid">
       <div className="title">
         <h1 className='text-primary fw-extra-bold fs-section-title ff-primary'>SKILLS</h1>
