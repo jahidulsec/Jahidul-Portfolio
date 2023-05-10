@@ -13,10 +13,16 @@ const About = () => {
           <span className='circle-light'></span>
         </div>
         <p className='text-neutral-300 fw-regular fs-para ff-primary'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Jahidul is a passionate front-end developer with experience in React Js, JavaScript, Python, Django, and Rest APIs. 
+        He excels on keeping designs simple. For almost five years, Jahidul has worked as a freelance 
+        graphic designer. He enjoys spending time exploring new technologies, developing original designs, 
+        and discovering new areas of knowledge. Of course, as a front-end developer, he has some cloud-based projects.
         </p>
-        <button className="btn-light">Download CV</button>
+        <button className="btn-light">
+          <a href="Jahidul_FD.pdf" download>
+            Download CV
+          </a>
+        </button>
       </article>
     </section>
   )

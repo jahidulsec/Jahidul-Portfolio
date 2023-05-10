@@ -515,6 +515,7 @@ body{
 .hero-section .container .right{
   grid-column: 3/5;
   justify-self: center;
+  position: relative;
 }
 
 .hero-section .container p {
@@ -525,9 +526,20 @@ body{
   margin: 1.875rem 0;
 }
 
-.pp {
+.pp-frame {
   width: 250px;
 }
+
+.pp-image{
+  width: 235px;
+  height: 350px;
+  /* background-color: red; */
+  position: absolute;
+  top: 8px;
+  left: 7px;
+  object-fit: cover;
+}
+
 
 .icons {
   display: flex;
@@ -619,7 +631,7 @@ body{
 .about-section .container .circles{
   position: absolute;
   top: 15rem;
-  left: 28rem;
+  left: 33%;
 }
 
 
@@ -676,7 +688,7 @@ body{
   .about-section .container .circles{
     position: absolute;
     top: 5rem;
-    left: 20rem;
+    left: 80%;
   }
   .about-section .container .btn-light{
     grid-column: 1;

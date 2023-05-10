@@ -13,8 +13,7 @@ const Hero = ({handleClick}) => {
             <span className='circle-dark'></span>
           </div>
           <p className='ff-primary fs-para fw-regular '>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+            Building digital product, Innovative and user centered design and collaboration 
           </p>
           <button className='btn-dark '>
             <a href='#contact' onClick={handleClick(`contact`)} >
@@ -23,11 +22,16 @@ const Hero = ({handleClick}) => {
           </button>
         </div>
         <div className="right">
-          <img className='pp' src="/Images/frame.png" alt="" />
+          <img className='pp-frame' src="/Images/frame.png" alt="" />
+          <img className='pp-image' src="Images/pp.jpg" alt="jahidul" />
         </div>
         <div className="icons">
-          <AiFillGithub size={30} className='github' />
-          <AiFillLinkedin size={30} className='linkedin' />
+          <a href="https://github.com/jahidulsec/">
+            <AiFillGithub size={30} className='github' />
+          </a>
+          <a href="https://www.linkedin.com/in/jahidulsec/">
+            <AiFillLinkedin size={30} className='linkedin' />
+          </a>
         </div>
       </div>
     </section>

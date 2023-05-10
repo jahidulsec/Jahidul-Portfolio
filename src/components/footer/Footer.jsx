@@ -21,8 +21,12 @@ const Footer = ({handleClick}) => {
             </ul>
         </nav>
         <div className="social-icons">
-          <AiFillGithub size={40} className='github' />
-          <AiFillLinkedin size={40} className='linkedin' />
+          <a href="https://github.com/jahidulsec/">
+            <AiFillGithub size={40} className='github' />
+          </a>
+          <a href="https://www.linkedin.com/in/jahidulsec/">
+            <AiFillLinkedin size={40} className='linkedin' />
+          </a>
         </div>
         <h6 className='ff-primary fs-para fw-light'>© Jahidul Islam. All rights reserved.</h6>
       </div>
