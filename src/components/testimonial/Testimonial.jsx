@@ -23,49 +23,19 @@ const Testimonial = () => {
           >
             <div>
               <ReviewCard 
-              reviewerName={`Reviwer's name`}
-              reviewerCompany={`Company name`}
+              reviewerName={`Client`}
+              reviewerCompany={`Upwork`}
               desc={`
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna 
-                aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-                ullamco laboris nisi.
+                A nice person I worked with.
               `}  
               />
             </div>
             <div>
               <ReviewCard 
-              reviewerName={`Reviwer's name`}
-              reviewerCompany={`Company name`}
+              reviewerName={`Ajmal Bajawray`}
+              reviewerCompany={`Upwork's Client`}
               desc={`
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna 
-                aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-                ullamco laboris nisi.
-              `}  
-              />
-            </div>
-            <div>
-              <ReviewCard 
-              reviewerName={`Reviwer's name`}
-              reviewerCompany={`Company name`}
-              desc={`
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna 
-                aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-                ullamco laboris nisi.
-              `}  
-              />
-            </div>
-            <div>
-              <ReviewCard 
-              reviewerName={`Reviwer's name`}
-              reviewerCompany={`Company name`}
-              desc={`
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna 
-                aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-                ullamco laboris nisi.
+                Good person!
               `}  
               />
             </div>

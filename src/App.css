@@ -40,6 +40,8 @@
   --grid-column: 1/5;
 
   --project-img-width: 17rem;
+  --project-inner-img-width: 16.4rem;
+
 
   --review-card-width: 35rem;
 
@@ -67,6 +69,8 @@
 
 
   --project-img-width: 13.75rem;
+  --project-inner-img-width: 13.1rem;
+  
 
   --field-width: 21rem;
 
@@ -95,6 +99,9 @@
 
 
     --project-img-width: 13.75rem;
+    --project-inner-img-width: 13.09rem;
+
+
 
     --review-card-width: 19.25rem;
 
@@ -530,16 +537,20 @@ body{
   width: 250px;
 }
 
+
 .pp-image{
   width: 235px;
   height: 350px;
-  /* background-color: red; */
   position: absolute;
   top: 8px;
   left: 7px;
   object-fit: cover;
+  transition: filter 300ms ease-in;
 }
 
+.pp-image:hover {
+  filter: drop-shadow(0 0 0.9rem rgb(187, 249, 247));
+}
 
 .icons {
   display: flex;
@@ -575,7 +586,7 @@ body{
   }
 
   .icons {
-    top: 60%;
+    top: 75%;
     right: 5rem;
     /* bottom: 1rem; */
   }
@@ -594,7 +605,7 @@ body{
 
   .icons {
     flex-direction: row;
-    top: 64%;
+    top: 67%;
     right: 2rem;
   }
 }
@@ -807,25 +818,61 @@ body{
   .project-card .project-frame{
     position: relative;
   }
-  .project-card .project-frame img{
+  .project-card .project-frame .project-cover{
     width: var(--project-img-width);
     margin-bottom: 2rem;
   }
 
-  .project-card .project-frame span{
-    width: var(--project-img-width);
+  .project-card .project-image{
+    width: var(--project-inner-img-width);
+    aspect-ratio: 0.68;
+    position: absolute;
+    top: 7px;
+    left: 5px;
+    object-fit: cover;
+    transition: all 400ms ease;
+  }
+
+
+  .project-tech-detail{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    top: 7px;
+    left: 5px;
+    background-color: hsla(0, 0%, 0%, 0.75);
+    padding: 90% 1rem 0 1rem;
+    aspect-ratio: 0.672;
+    /* height: 24.4rem; */
+    width: var(--project-inner-img-width);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: all 500ms;
+  }
+
+  .project-tech-detail:hover{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .project-card .project-frame button{
     position: absolute;
     background-color: var(--clr-light-300);
     color: var(--clr-primary-400);
     text-align: center;
     padding: 0.25em;
-    width: 10em;
+    width: 6em;
     margin: -52px 0;
-    left: 10rem;
+    right: -2em;
     border-radius: .5rem;
+    border: none;
   }
 
-  .project-card .project-frame span:hover{
+
+  .project-card .project-frame button:hover{
     cursor: pointer;
     color: var(--clr-light-500);
     background-color: var(--clr-primary-400);
@@ -929,6 +976,10 @@ body{
     border-top-left-radius: 1.875rem;
     border-bottom-right-radius: 1.875rem;
     position: relative;
+  }
+  .testimonial-card p{
+    text-align: center;
+    padding: 1rem 0 0 0;
   }
 
   .testimonial-card .quotation{

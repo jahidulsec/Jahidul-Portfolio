@@ -12,27 +12,21 @@ const Portfolio = () => {
         </div>
         <div className="project-list">
             <ProjectCard 
+              projectCover={ `project_1`}
+              projectStack={`React Js, Node Js, Express Js, MongoDB`}
+              projectUrl={`https://mydit-ui-bdl7.vercel.app/`}
               projectTitle={`Project - 001`}
-              projectDesc={`Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit, sed do eiusmod tempor `}
+              projectDesc={`Myd.it | Fashion Designer's Freelance Website (Full Stack) `}
             />
             <ProjectCard 
               marginTop={`3rem`}
-              projectTitle={`Project - 001`}
-              projectDesc={`Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod tempor `}
-          />
-          <ProjectCard 
-            projectTitle={`Project - 001`}
-            projectDesc={`Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod tempor `}
-          />
-          <ProjectCard 
-            marginTop={`3rem`}
-            projectTitle={`Project - 001`}
-            projectDesc={`Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod tempor `}
-          />
+              projectCover={`project_2`}
+              projectStack={`ReactJs`}
+              projectUrl={`https://ava-town-vr-website.vercel.app/`}
+              projectTitle={`Project - 002`}
+              projectDesc={`AvaTown | VR Avatar Website (Frontend)`}
+            />
+          
         </div>
         <div className="down-icon">
           <BsArrowDown 

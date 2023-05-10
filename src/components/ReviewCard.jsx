@@ -5,7 +5,7 @@ const ReviewCard = ({reviewerName, reviewerCompany, desc}) => {
   return (
     <article className='testimonial-card bg-light-200'>
         <div className="quotation">
-            <BsQuote size={150}/>
+            <BsQuote size={80}/>
         </div>
         <p className='text-primary ff-primary fw-regular fs-para'>
             {desc}
