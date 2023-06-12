@@ -23,8 +23,8 @@ const Testimonial = () => {
           >
             <div>
               <ReviewCard 
-              reviewerName={`Client`}
-              reviewerCompany={`Upwork`}
+              reviewerName={`Vince StaL`}
+              reviewerCompany={`Upwork's Client`}
               desc={`
                 A nice person I worked with.
               `}  

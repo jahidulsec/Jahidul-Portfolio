@@ -15,11 +15,11 @@ const Hero = ({handleClick}) => {
           <p className='ff-primary fs-para fw-regular '>
             Building digital product, Innovative and user centered design and collaboration 
           </p>
-          <button className='btn-dark '>
-            <a href='#contact' onClick={handleClick(`contact`)} >
+          <a href='#contact' onClick={handleClick(`contact`)} >
+            <button className='btn-dark '>
               Let's Talk
-            </a>
-          </button>
+            </button>
+          </a>
         </div>
         <div className="right">
           <img className='pp-frame' src="/Images/frame.png" alt="" />
