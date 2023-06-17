@@ -26,7 +26,7 @@ const App = () => {
 
 
   return (
-    <div>
+    <div className='app'>
       <Navbar handleClick={handleClick} />
       <main>
         <Hero handleClick={handleClick} />

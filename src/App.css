@@ -370,134 +370,122 @@ body{
 
 
 
-
-
-
+.app {
+  position: relative;
+}
 
 
 /* nav section */
-.primary-nav{
-  position: fixed;
-  z-index: 9999;
-  background-color: hsla(0, 0%, 0%, 0.75);
+.primary-header{
+  position: sticky;
+  z-index: 9;
+  top: 0;
+  background-color: var(--clr-light-300);
+  margin: 3rem 1.35rem 0;
+  padding: 0 1rem;
+  border-radius:0.25rem 0.25rem 0.5rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-@supports (backdrop-filter: blur(1rem)) {
-  .primary-nav{
-    background-color: hsla(0, 0%, 0%, 0.75);
-    backdrop-filter: blur(0.5rem);
-  }
+.primary-header[data-visible='true']{
+  background-color: var(--clr-primary-400);
+  position: fixed;
+  top: 0;
+  margin: 0;
+  padding-left: 2rem;
+  height: 100vh;
+  width: 50vw;
+  display: block;
+}
 
+
+span.logo{
+  color: var(--clr-primary-400);
+  cursor: pointer;
+}
+
+span.logo[data-visible='true']{
+  display: none;
+}
+
+.primary-nav{
+  display: none;
+}
+
+.primary-nav[data-visible = 'true']{
+  display: block;
 }
 
 .primary-nav ul{
   display: flex;
+  gap: 1rem;
 }
 
-.primary-header .container .logo {
-  position: fixed;
-  top: 3rem;
-  z-index: 9999;
-}
-.primary-header .container .logo:hover {
-  color: var(--clr-light-500);
-  cursor: pointer;
+.primary-nav[data-visible = 'true'] ul{
+  flex-direction: column;
 }
 
-.active-link {
-  color: var(--clr-light-500);
+.nav-toggle{
+  color: var(--clr-primary-400);
 }
 
-/* desktop view */
 
-@media (min-width: 52rem) {
-  .primary-nav{
-    position: fixed;
-    z-index: 9999;
-    background-color: hsla(0, 0%, 0%, 1);
-    padding: 1rem 3rem 1rem 8rem;
-    margin: 0;
-    border-bottom-right-radius: 2.5rem;
-    transition: all 450ms ease-in-out;
-  }
-
-  .primary-nav ul{
-    gap: 3rem;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .primary-nav ul li a:hover{
-    color: var(--clr-light-500);
-  }
-
-  .mobile-nav-toggle{
-    display: none;
-  }
-
-  .primary-header .container .logo {
-    right: 0rem;
-    padding: 0rem 4rem 1rem 2rem;
-    border-bottom-left-radius: 2rem;
-  }
+.nav-toggle[data-visible='true']{
+  color: var(--clr-light-200);
+  padding: 2rem 0;
 }
 
 
 
-/* mobile view */
+  /* desktop view */
 
-@media (max-width: 52rem) {
+  @media (min-width:832px) {
+    .nav-toggle{
+      display: none;
+    }
 
-
-  .primary-nav{
-    inset: 0 0 0 40%;
+    .primary-header{
+      position: sticky;
+      min-height: fit-content;
+      top: 0;
+      margin: 0;
+      margin-right: 1.5rem;
+      margin-top: 2rem;
+      padding: 0;
+      padding-right: 1rem;
+      border-top-right-radius: 2rem;
+      border-bottom-right-radius: 2rem;
+    }
     
+    .primary-nav{
+      display: inline;
+      background-color: var(--clr-primary-400);
+      height: fit-content;
+      padding: 1rem 3rem;
+      /* border-top-right-radius: 2rem; */
+      border-bottom-right-radius: 2rem;
+      border-bottom: 2px solid var(--clr-light-300);
+    }
 
-    padding: min(30vh, 10rem) 5rem;
+    .primary-nav ul{
+      gap: 3rem;
+    }
 
-    transform: translateX(100%);
+    .active-link{
+      color: var(--clr-light-500);
+    }
 
-    transition: transform 50ms ease;
-    margin: 0;
+    span.logo{
+      margin-right: 2rem;
+      color: var(--clr-primary-400);
+    }
+
+    span.logo:hover{
+      color: var(--clr-light-200);
+    }
   }
-
-  .primary-nav[data-visible="true"]{
-    transform: translateX(0%);
-  }
-  
-  .primary-nav ul{
-    flex-direction: column;
-    gap: 1rem;
-    color: var(--clr-light-500);
-  }
-
-  .mobile-nav-toggle{
-    background-color: transparent;
-    border: none;
-    position: absolute;
-    width: 1.2rem;
-    aspect-ratio: 1;
-    z-index: 99991;
-    top: 2rem;
-    right: 4rem;
-    color: var(--clr-light-200);
-  }
-
-  .primary-header .container .logo {
-    position: absolute;
-    color: var(--clr-primary-400);
-    left:0.25rem;
-    top: 4rem;
-    padding: 0rem 4rem 1rem 2rem;
-    border-bottom-left-radius: 2rem;
-  }
-
-}
-
-
-
-
-
 
 
 
@@ -506,10 +494,14 @@ body{
 .hero-section{
   background-color: var(--clr-light-300);
   border-radius: 2.5rem;
-  margin: 2rem 1.25rem;
-  position: relative;
-  
+  margin: 1rem 1.25rem;
+  position: relative; 
 }
+
+  .hero-section{
+    margin-top: -3.25rem;
+  }
+
 
 .hero-section .container{
   padding: 6.5rem 0;

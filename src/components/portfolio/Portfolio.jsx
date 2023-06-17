@@ -19,6 +19,7 @@ const Portfolio = () => {
               projectDesc={`Little Lemon | Family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist (Full Stack) `}
             />
             <ProjectCard 
+              marginTop={`3rem`}
               projectCover={ `project_1`}
               projectStack={`React Js, Node Js, Express Js, MongoDB`}
               projectUrl={`https://mydit-ui-bdl7.vercel.app/`}
