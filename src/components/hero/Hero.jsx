@@ -29,7 +29,7 @@ const Hero = ({handleClick}) => {
           <a href="https://github.com/jahidulsec/">
             <AiFillGithub size={30} className='github' />
           </a>
-          <a href="https://www.linkedin.com/in/jahidulsec/">
+          <a href="https://www.linkedin.com/in/jahidulapp/">
             <AiFillLinkedin size={30} className='linkedin' />
           </a>
         </div>
